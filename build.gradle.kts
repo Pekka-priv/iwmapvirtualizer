@@ -23,10 +23,10 @@ labyMod {
     }
 
     addonInfo {
-        namespace = "example"
-        displayName = "ExampleAddon"
-        author = "Example Author"
-        description = "Example Description"
+        namespace = "iwmapvirtualizer"
+        displayName = "iwmapvirtualizer"
+        author = "Hoxpelliarmus"
+        description = "Zeigt die IW-Karten-IDs an."
         minecraftVersion = "*"
         version = rootProject.version.toString()
     }
