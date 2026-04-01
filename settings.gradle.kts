@@ -2,24 +2,19 @@ rootProject.name = "iwmapvirtualizer"
 
 pluginManagement {
     val labyGradlePluginVersion = "0.6.2"
-    plugins {
-        id("net.labymod.gradle") version (labymodGradlePluginVersion)
+
+    repositories {
+        maven("https://dist.labymod.net/api/v1/maven/release/")
+        maven("https://maven.neoforged.net/releases/")
+        maven("https://maven.fabricmc.net/")
+        gradlePluginPortal()
+        mavenCentral()
     }
 
-    buildscript {
-        repositories {
-            maven("https://dist.labymod.net/api/v1/maven/release/")
-            maven("https://repo.spongeoiwered.org/repository/maven-public")
-            mavenCentral()
-        }
-
-        dependencies {
-            classpath("net.labymod.gradle", "addon", labyGradlePluginVersion)
-        }
+    plugins {
+        id("net.labymod.labygradle.settings") version labyGradlePluginVersion
     }
 }
-
-plugins.apply("net.labymod.labygradle.settings")
 
 include(":api")
 include(":core")
